@@ -35,8 +35,8 @@ export class EmployeeStore {
                 positionFilters: this.positionFilters,
                 nameFilter: this.nameFilter,
             })
-        );
-    };
+        )
+    }
 
     loadFilters = () => {
         const data = localStorage.getItem('FilterStore');
@@ -73,13 +73,15 @@ export class EmployeeStore {
             this.nameFilter = value
         }
         this.saveFilters()
-        this.load()
-        this.loadEmployeesList()
-    };
+        if(this.getFilters().find((el) => el.length > 0) === undefined) {
+            this.dropPage()
+            this.loadEmployeesList()
+        }
+    }
 
     getFilters = () => {
         return [this.stackFilters, this.genderFilters, this.positionFilters];
-    };
+    }
 
     save = () => {
         window.localStorage.setItem(
@@ -87,15 +89,15 @@ export class EmployeeStore {
             JSON.stringify({
                 currentEmployee: this.currentEmployee,
             })
-        );
-    };
+        )
+    }
 
     load = () => {
-        const data = window.localStorage.getItem(EmployeeStore.name);
+        const data = window.localStorage.getItem(EmployeeStore.name)
         if (data) {
-            Object.assign(this, JSON.parse(data));
+            Object.assign(this, JSON.parse(data))
         }
-    };
+    }
 
     dropPage = () => {
         this.page = 1
@@ -131,9 +133,9 @@ export class EmployeeStore {
     pickEmployee = (currentEmployee: IEmployee) => {
         this.currentEmployee = currentEmployee
         this.save()
-    };
+    }
 
     unpickEmployee = () => {
-        window.localStorage.removeItem(EmployeeStore.name);
+        window.localStorage.removeItem(EmployeeStore.name)
     }
 }

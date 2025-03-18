@@ -22,12 +22,12 @@ export const Accordion = (article: IArticleProp) => {
     }, []);
     return (
         <details ref={detailsRef} className='details' name='filter'>
-            <summary className='summary text'>{article.summary}</summary>
+            <summary className='summary text'>{article.summary[0]}</summary>
             <ul className='selectors'>
-                {article.data.map((el, index) => 
+                {article.data[0].map((el, index) => 
                     <li key={index} className='selector__container'>
                         <p className='selector__item text text_400'>{el}</p>
-                        <Checkbox key={index} filterName={article.filterName} value={article.values[index]} />
+                        <Checkbox key={index} filterName={article.summary[1]} value={article.data[1][index]} />
                     </li>
                 )}
             </ul>

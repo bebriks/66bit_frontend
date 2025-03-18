@@ -1,5 +1,7 @@
 import './Picked-filters.scss'
 import '../../../App.scss'
+
+import { Position, Gender } from '../../../constants/articleProps'
 import { PickedFilterCard } from '../picked-filter-card/Picked-filter-card'
 import { useContext, useEffect } from 'react'
 import { employeeStore } from '../../../store'
@@ -33,15 +35,35 @@ export const PickedFilters = observer(() => {
                     <div className='all_picked_filters'>
                         {employeeStoreConfig.getFilters().map((arr: string[], index: number) => {
                             const filterType = index === 0 ? 'Stack' : index === 1 ? 'Gender' : index === 2 ? 'Position' : 'Name';
+                            /* let text = ''
+                            switch(filterType) {
+                                case 'Stack':
+                                    text =
 
-                            return arr.map((el) => (
-                                <PickedFilterCard
+                            } */
+                            return arr.map((el) => {
+                                let text = ''
+                                switch(filterType) {
+                                    case 'Stack':
+                                        text = el
+                                        break
+                                    case 'Gender':
+                                        text = Gender.data[0][Gender.data[1].findIndex((val) => val === el)]
+                                        break
+                                    case 'Position':
+                                        text = Position.data[0][Position.data[1].findIndex((val) => val === el)]
+                                        break
+                                    default:
+                                        text = ''
+
+                                }
+                                return <PickedFilterCard
                                     key={`${filterType}-${el}`}
-                                    text={el}
+                                    text={text}
                                     //filterName={filterType}
                                     onRemove={() => employeeStoreConfig.resetFilters(filterType, el)}
                                 />
-                            ))
+                            })
                         })}
                     </div>
                 </div>

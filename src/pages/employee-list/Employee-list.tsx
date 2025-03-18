@@ -23,13 +23,12 @@ export const EmployeeList = observer(() => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleVerticalScroll);
-
         employeeConfig.loadEmployeesList();
         return () => {
             window.removeEventListener('scroll', handleVerticalScroll);
             handleVerticalScroll.cancel();
         };
-    }, [employeeConfig])
+    }, [employeeConfig.employeesList, employeeConfig.genderFilters, employeeConfig.positionFilters, employeeConfig.stackFilters])
 
     return (
         <Main>

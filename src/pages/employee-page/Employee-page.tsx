@@ -10,12 +10,10 @@ export const EmployeePage = ({ data }: {data: IEmployee}) => {
         <Main>
             <div className={styles.employee_info}>
                 <img src={data?.photo} className={styles.photo} />
-                {/* <div className={styles.employee}> */}
-                    <h1 className={styles.label}>{data?.name}</h1>
+                    <h1 className={styles.label_1lv}>{data?.name}</h1>
                     <p className={`${styles.position}`}>{data?.position}</p>
                     <div className={styles.stack}>
                         {data?.stack.map((el) => <StackCard textData={el} />)}
-                    {/* </div> */}
                 </div>
             </div>
 
@@ -23,18 +21,18 @@ export const EmployeePage = ({ data }: {data: IEmployee}) => {
 
             <div className={styles.main_info__container}>
                 <div className={styles.main_info}>
-                    <h2 className={`${styles.label}`}>Основная информация</h2>
+                    <h2 className={`${styles.label_2lv}`}>Основная информация</h2>
                     <div className={`${styles.main_info__grid} ${styles.main_info__item} ${styles.text_m}`}>
-                        <p>Контактный телефон:</p>
-                        <p>{phoneFormater(data!.phone)}</p>
+                        <p className={styles.main_info__item__title}>Контактный телефон:</p>
+                        <p className={styles.main_info__item__content}>{phoneFormater(data!.phone)}</p>
                     </div>
                     <div className={`${styles.main_info__grid} ${styles.main_info__item} ${styles.text_m}`}>
-                        <p>Дата рождения:</p>
-                        <p>{dateFormaterToDDMMYYYY(data!.birthdate)}</p>
+                        <p className={styles.main_info__item__title}>Дата рождения:</p>
+                        <p className={styles.main_info__item__content}>{dateFormaterToDDMMYYYY(data!.birthdate)}</p>
                     </div>
                     <div className={`${styles.main_info__grid} ${styles.main_info__item} ${styles.text_m}`}>
-                        <p>Дата устройства:</p>
-                        <p>{dateFormaterToDDMMYYYY(data!.dateOfEmployment)}</p>
+                        <p className={styles.main_info__item__title}>Дата устройства:</p>
+                        <p className={styles.main_info__item__content}>{dateFormaterToDDMMYYYY(data!.dateOfEmployment)}</p>
                     </div>
                 </div>
             </div>

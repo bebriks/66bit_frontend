@@ -8,7 +8,10 @@ $mobile-photo-size: 100px;
     width: $default-photo-size;
     grid-row: span 3;
 }
-
+.position {
+    font-weight: 500;
+    font-size: 24px;
+}
 .stack {
     display: flex;
     gap: 16px;
@@ -62,14 +65,23 @@ $mobile-photo-size: 100px;
     margin: 40px auto;
     max-width: 1560px;
 }
-
+.main_info__item__title {
+    font-weight: 500;
+}
+.main_info__item__content {
+    font-weight: 400;
+}
 @media screen and (max-width: 320px) {
     .photo {
         width: $mobile-photo-size;
         height: $mobile-photo-size;
         grid-row: span 2;
     }
-    .label {
+    .label_1lv {
+        max-width: 153px;
+        font-size: style.$text_l;
+    }
+    .label_2lv {
         font-size: style.$text_l;
     }
     .employee { 
