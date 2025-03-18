@@ -1,0 +1,23 @@
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: center;
+    max-width: 1560px;
+    margin: auto;
+}
+.accordions {
+    display: flex;
+    align-self: center;
+    gap: 54px;
+}
+.label {
+    margin-bottom: 28px;
+}
+@media screen and (max-width: 320px) {
+    .label {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    
+}

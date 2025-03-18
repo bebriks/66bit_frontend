@@ -1,0 +1,36 @@
+@use '../../App.scss' as *;
+
+.input {
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 20px;
+    max-width: 1560px;
+    padding: 10px;
+    width: 100%;
+    border: 0.5px solid rgba(176, 176, 176, 1);
+    border-radius: 5px;
+    color: rgba(129, 129, 129, 1);
+    font-size: $text_xxl;
+    background-color: transparent;
+    line-height: 24px;
+    &:focus {
+        outline: none;
+        border: 0.5px solid rgba(21, 93, 164, 1);
+    }
+    &::placeholder {
+        color: rgba(176, 176, 176, 1);
+        line-height: 24px;
+    }
+    &::content {
+        font-size: $text_s;
+    }
+    &:focus::placeholder {
+        color: rgba(129, 129, 129, 1);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .input {
+        font-size: $text_s;
+    }
+}

@@ -1,0 +1,39 @@
+@use '../../App.scss' as *;
+
+.button {
+    border: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    background: rgba(21, 93, 164, 1);
+    align-items: center;
+    padding: 12px 48px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    margin: 0;
+    height: max-content;
+    min-width: 145px;
+}
+.button__text {
+    margin: 0;
+}
+@media screen and (max-width: 320px){
+    .button {
+        width: 100%;
+        border-radius: 4px;
+        padding: 0;
+        letter-spacing: 2%;
+        font-weight: 600;
+        padding: 3px 0;
+        //margin-top: 16px;
+    }
+    .button__text {
+        font-family: Raleway;
+        font-weight: 600;
+        font-size: $text_s;
+        font-variant-numeric: lining-nums;
+        font-variant-numeric: proportional-nums;
+
+    }
+}

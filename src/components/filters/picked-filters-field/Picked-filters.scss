@@ -1,0 +1,72 @@
+@use '../../../App.scss' as *;
+
+.picked_filters__container {
+    display: flex;
+    width: 100%;
+    padding: 13px 0;
+    margin-top: 28px;
+    .picked_filters__content {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        max-width: 1560px;
+        width: 100%;
+        gap: 24px;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+.picked_filters__label__container {
+    display: flex; /* Включаем Flexbox */
+    justify-content: center; /* Выравнивание по горизонтали */
+    align-items: center; /* Выравнивание по вертикали */
+    max-height: 44px;
+    width: fit-content;
+    text-align: center;
+}
+
+.picked_filters__label {
+    display: block;
+    text-wrap: nowrap;
+}
+.all_picked_filters { 
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.picked_filters {
+    display: flex;
+    gap: 24px;
+}
+
+@media screen and (max-width: 320px) {
+    .picked_filters__container {
+        margin-top: 11px;
+    }
+    .picked_filters__content { 
+        flex-wrap: wrap;
+        gap: 16px !important;
+    }
+
+    .picked_filters {
+        gap: 12px;
+        flex-flow: column wrap;
+    }
+
+    .all_picked_filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .picked_filters__label {
+        font-size: $text_m;
+        font-weight: 500;
+    }
+    .picked_filters__container {
+        max-width: 100%;
+        padding: 16px 24px;
+        flex-wrap: wrap;
+    }
+    
+}

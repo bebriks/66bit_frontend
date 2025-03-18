@@ -1,0 +1,36 @@
+@use '/src/App.scss' as style;
+
+.breadcrumbs {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 1560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.breadcrumb_link {
+    color: rgba(176, 176, 176, 1);
+    text-decoration: none;
+    text-align: left;
+    text-wrap: nowrap;
+}
+.breadcrumb_container {
+    display: flex;
+    gap: 12px;
+}
+@media screen and (max-width: 320px) {
+    .breadcrumb_link {
+        font-size: style.$text_s;
+    }
+    .breadcrumb_dynamic_link {
+        max-width: 108px;
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+        overflow: hidden;
+    }
+    .breadcrumb_hide {
+        display: none;
+    }
+}

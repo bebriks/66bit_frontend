@@ -1,0 +1,32 @@
+.body {
+    width: 100%;
+    //max-width: 1560px;
+    min-height: 100vh;
+    height: 100%;
+    justify-content: center;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+tr {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    padding-right: 54px;
+
+    background-color: transparent;
+}
+th{
+    text-align: left;
+}
+.filters {
+    display: flex;
+    justify-content: space-between;
+}
+.accordions {
+    display: flex;
+    gap: 54px;
+}
+.label {
+    margin-bottom: 28px;
+}

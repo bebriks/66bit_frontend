@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useContext } from 'react'
+import './App.scss'
+import { Header } from './components/article/components/header/Header'
+import { Route, Routes, } from 'react-router'
+import { configStore, employeeStore } from './store'
+import { observer } from 'mobx-react-lite'
+import { EmployeePage } from './pages/employee-page/Employee-page'
+import { Breadcrumb } from './components/breadcrumb/Breadcrumb'
+import { EmployeeList } from './pages/employee-list/Employee-list'
+import { NotFound } from './pages/not-found/Not-found'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = observer(() => {
+  const employeeConfig = useContext(employeeStore)
+  const appConfig = useContext(configStore)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className={`${appConfig.theme}`}>
+      <Header onSwitchTheme={() => appConfig.changeTheme()} />
+      <Breadcrumb />
+      <Routes>
+        <Route path={'/'} element={<EmployeeList />} />
+        <Route path={`/employee/${employeeConfig.currentEmployee?.id}`} element={<EmployeePage data={employeeConfig.currentEmployee} />} />
+        <Route path={'*'} element={<NotFound />} />
+      </Routes>
+    </div>
   )
-}
+})
 
 export default App

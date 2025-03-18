@@ -1,0 +1,39 @@
+@use '../../../../App.scss' as styles;
+
+*{
+    box-sizing: border-box;
+}
+.header {
+    width: 100%;
+    align-items: center;
+    //box-shadow: 0px 4px 8px 0px rgba(57, 113, 164, 0.25);
+    padding: 25px;
+    .header__container{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        align-items: center;
+        max-width: 1560px;
+    }
+}
+
+.info,
+.contacts {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+.info{
+    gap: 48px;
+}
+
+.dark {
+    .header {
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+.light {
+    .header {
+        box-shadow: 0px 4px 8px 0px rgba(57, 113, 164, 0.25);
+    }
+}

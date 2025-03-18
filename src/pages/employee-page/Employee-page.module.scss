@@ -1,0 +1,110 @@
+@use '/src/App.scss' as style;
+
+$default-photo-size: 163px;
+$mobile-photo-size: 100px;
+
+.photo {
+    border-radius: 100%;
+    width: $default-photo-size;
+    grid-row: span 3;
+}
+
+.stack {
+    display: flex;
+    gap: 16px;
+}
+
+.employee_info {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: auto auto;
+    text-align: left;
+    align-content: center;
+    align-items: center;
+    max-width: 1560px;
+    margin: auto;
+    margin-top: 16px;
+    gap: 0 42px;
+    .employee {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+        text-align: left;
+
+        max-height: 154px;
+    }
+}
+
+.main_info__container {
+    max-width: 1560px;
+    margin: auto;
+}
+.main_info {
+    text-align: left;
+    max-width: 478px;
+    h2 {
+        margin-bottom: 32px;
+    }
+    .main_info__item {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+}
+.main_info__grid {
+    display: grid;
+    grid-template-columns: 145px 109px;
+    white-space: nowrap;
+    justify-content: space-between;
+    
+}
+.break_line {
+    border-bottom: 1px solid rgba(242, 242, 242, 1);
+    margin: 40px auto;
+    max-width: 1560px;
+}
+
+@media screen and (max-width: 320px) {
+    .photo {
+        width: $mobile-photo-size;
+        height: $mobile-photo-size;
+        grid-row: span 2;
+    }
+    .label {
+        font-size: style.$text_l;
+    }
+    .employee { 
+        margin-top: 3.5px;
+        margin-bottom: 3.5px;
+    }
+    .employee_info {
+        padding-left: 24px;
+        padding-right: 24px;
+        gap: 0 16px;
+        .stack {
+            grid-column-start: span 2;
+            margin-top: 12px;
+        }
+    }
+    .position {
+        margin-top: 8px;
+        font-size: style.$text_m !important;
+    }
+    .main_info {
+        font-size: style.$text_m;
+        padding-left: 24px;
+        padding-right: 24px;
+        h2 {
+            margin-bottom: 16px;
+        }
+        .main_info__item {
+            margin-bottom: 12px;
+        }
+    }
+    .stack {
+        gap: 8px;
+    }
+    .break_line {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
