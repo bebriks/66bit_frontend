@@ -58,6 +58,8 @@ export class EmployeeStore {
             this.genderFilters.push(value)
         } else {
             this.nameFilter = value
+            this.dropPage()
+            this.loadEmployeesList()
         }
         this.saveFilters()
     }

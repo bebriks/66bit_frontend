@@ -29,7 +29,7 @@ export const GETEmployees = async (
 
         const queryString = qs.stringify(params, { arrayFormat: 'repeat' })
 
-        const response = await axios.get(`https://frontend-test-api.stk8s.66bit.ru/api/Employee?${queryString}`)
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_API}?${queryString}`)
 
         if (response.status === 200) {
             console.log(response.data)

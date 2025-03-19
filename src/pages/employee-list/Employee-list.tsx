@@ -48,7 +48,7 @@ export const EmployeeList = observer(() => {
                         ))}
                         {employeeConfig.isLoading && <Loading />}
                         {employeeConfig.employeesList.length === 0 && !employeeConfig.isLoading && (
-                            <div>Сотрудники не найдены.</div>
+                            <div className={styles.not_found}>Сотрудники не найдены.</div>
                         )}
                     </Suspense>
                 </div>
