@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
     "axios": "^1.7.9",
     "lodash": "^4.17.21",
     "mobx": "^6.13.6",
@@ -20,20 +22,20 @@
     "react-router-dom": "^7.1.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
+    "@eslint/js": "^9.22.0",
     "@types/lodash": "^4.17.16",
     "@types/node": "^22.13.1",
     "@types/qs": "^6.9.18",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.19.0",
+    "eslint": "^9.22.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
     "sass-embedded": "^1.83.4",
     "typescript": "~5.7.2",
-    "typescript-eslint": "^8.22.0",
+    "typescript-eslint": "^8.26.1",
     "vite": "^6.1.0"
   }
 }

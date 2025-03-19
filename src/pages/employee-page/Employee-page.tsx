@@ -10,10 +10,10 @@ export const EmployeePage = ({ data }: {data: IEmployee}) => {
         <Main>
             <div className={styles.employee_info}>
                 <img src={data?.photo} className={styles.photo} />
-                    <h1 className={styles.label_1lv}>{data?.name}</h1>
-                    <p className={`${styles.position}`}>{data?.position}</p>
-                    <div className={styles.stack}>
-                        {data?.stack.map((el) => <StackCard textData={el} />)}
+                <h1 className={styles.label_1lv}>{data?.name}</h1>
+                <p className={`${styles.position}`}>{data?.position}</p>
+                <div className={styles.stack}>
+                    {data?.stack.map((el) => <StackCard textData={el} />)}
                 </div>
             </div>
 

@@ -22,12 +22,12 @@ export const EmployeeList = observer(() => {
     }, 100)
 
     useEffect(() => {
-        window.addEventListener('scroll', handleVerticalScroll);
-        employeeConfig.loadEmployeesList();
+        window.addEventListener('scroll', handleVerticalScroll)
+        employeeConfig.loadEmployeesList()
         return () => {
-            window.removeEventListener('scroll', handleVerticalScroll);
-            handleVerticalScroll.cancel();
-        };
+            window.removeEventListener('scroll', handleVerticalScroll)
+            handleVerticalScroll.cancel()
+        }
     }, [employeeConfig.employeesList, employeeConfig.genderFilters, employeeConfig.positionFilters, employeeConfig.stackFilters])
 
     return (

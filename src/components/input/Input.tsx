@@ -5,7 +5,7 @@ interface InputProps {
     value: string
 }
 
-export const Input = ({onChange, value}: InputProps ) => {
+export const Input = ({ onChange, value }: InputProps ) => {
     return (
         <input type="text" className='input' placeholder='Поиск' defaultValue={value} onChange={(el) => onChange('name', el.target.value)}/>
     )

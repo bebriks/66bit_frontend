@@ -10,20 +10,20 @@ import { EmployeeList } from './pages/employee-list/Employee-list'
 import { NotFound } from './pages/not-found/Not-found'
 
 const App = observer(() => {
-  const employeeConfig = useContext(employeeStore)
-  const appConfig = useContext(configStore)
+    const employeeConfig = useContext(employeeStore)
+    const appConfig = useContext(configStore)
 
-  return (
-    <div className={`${appConfig.theme}`}>
-      <Header onSwitchTheme={() => appConfig.changeTheme()} />
-      <Breadcrumb />
-      <Routes>
-        <Route path={'/'} element={<EmployeeList />} />
-        <Route path={`/employee/${employeeConfig.currentEmployee?.id}`} element={<EmployeePage data={employeeConfig.currentEmployee} />} />
-        <Route path={'*'} element={<NotFound />} />
-      </Routes>
-    </div>
-  )
+    return (
+        <div className={`${appConfig.theme}`}>
+            <Header onSwitchTheme={() => appConfig.changeTheme()} />
+            <Breadcrumb />
+            <Routes>
+                <Route path={'/'} element={<EmployeeList />} />
+                <Route path={`/employee/${employeeConfig.currentEmployee?.id}`} element={<EmployeePage data={employeeConfig.currentEmployee} />} />
+                <Route path={'*'} element={<NotFound />} />
+            </Routes>
+        </div>
+    )
 })
 
 export default App

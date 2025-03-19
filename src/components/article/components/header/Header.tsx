@@ -11,8 +11,8 @@ export const Header = ({ onSwitchTheme }: {onSwitchTheme: React.MouseEventHandle
                 <img src={logo} alt="66 бит" className='logo' />
                 <div className={styles.info}>
                     <div className={styles.contacts}>
-                        <p className={`text contact`}>{Contacts.number}</p>
-                        <p className={`text contact`}>{Contacts.email}</p>
+                        <p className={'text contact'}>{Contacts.number}</p>
+                        <p className={'text contact'}>{Contacts.email}</p>
                     </div>
                     <ToggleSwitch onSwitch={onSwitchTheme} />
                 </div>

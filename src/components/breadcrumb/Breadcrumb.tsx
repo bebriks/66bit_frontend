@@ -5,10 +5,10 @@ import { useContext } from 'react'
 import { employeeStore } from '../../store'
 
 export const Breadcrumb = () => {
-    const location = useLocation();
-    const employee = useContext(employeeStore);
+    const location = useLocation()
+    const employee = useContext(employeeStore)
 
-    const isEmployeePage = location.pathname.startsWith('/employee/');
+    const isEmployeePage = location.pathname.startsWith('/employee/')
 
     return (
         <div className={`${styles.breadcrumbs}`}>
@@ -27,5 +27,5 @@ export const Breadcrumb = () => {
                 </>
             )}
         </div>
-    );
-};
+    )
+}

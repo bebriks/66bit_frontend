@@ -1,6 +1,6 @@
-import { autorun, configure, makeAutoObservable } from 'mobx';
+import { autorun, configure, makeAutoObservable } from 'mobx'
 import { IEmployee } from '../../api/types/types'
-import { GETEmployees } from '../../api/api';
+import { GETEmployees } from '../../api/api'
 
 configure({ enforceActions: 'always' })
 
@@ -39,15 +39,15 @@ export class EmployeeStore {
     }
 
     loadFilters = () => {
-        const data = localStorage.getItem('FilterStore');
+        const data = localStorage.getItem('FilterStore')
         if (data) {
-            const parsedData = JSON.parse(data);
-            this.stackFilters = parsedData.stackFilters || [];
-            this.genderFilters = parsedData.genderFilters || [];
-            this.positionFilters = parsedData.positionFilters || [];
-            this.nameFilter = parsedData.nameFilter || '';
+            const parsedData = JSON.parse(data)
+            this.stackFilters = parsedData.stackFilters || []
+            this.genderFilters = parsedData.genderFilters || []
+            this.positionFilters = parsedData.positionFilters || []
+            this.nameFilter = parsedData.nameFilter || ''
         }
-    };
+    }
 
     setFilter = (filterName: string, value: string) => {
         if(filterName === 'Stack') {
@@ -80,7 +80,7 @@ export class EmployeeStore {
     }
 
     getFilters = () => {
-        return [this.stackFilters, this.genderFilters, this.positionFilters];
+        return [this.stackFilters, this.genderFilters, this.positionFilters]
     }
 
     save = () => {
@@ -115,7 +115,7 @@ export class EmployeeStore {
             if (Array.isArray(data) && data.length > 0) {
                 const newEmployees = data.filter(
                     (newEmployee) => !this.employeesList.some((existingEmployee) => existingEmployee?.id === newEmployee?.id)
-                );
+                )
                 this.employeesList.push(...newEmployees)
                 this.page++
             } else {

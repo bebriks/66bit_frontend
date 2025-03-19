@@ -1,21 +1,13 @@
 .employee_item_content {
     display: grid;
-    //grid-template-columns: 2.5fr 1.25fr 1fr 0.6fr;
     grid-template-columns: 45% 25% 20.3% 9.7%;
     text-align: left;
     padding-top: 28px;
     padding-bottom: 28px;
     background-color: transparent;
-    //border-bottom: 1px solid rgba(242, 242, 242, 1);
     z-index: 299;
     &:first-child {
         border-top: 1px solid rgba(242, 242, 242, 1);
-    }
-
-    &:hover {
-        overflow-x: visible;
-        background-color: rgba(242, 242, 242, 1);
-        //border-bottom: 1px solid transparent;
     }
 }
 .employee_item_container {
@@ -24,13 +16,18 @@
     padding-left: 12px;
     padding-right: 12px;
     &:hover {
+        .employee_item_content {
+            border-top: 1px solid transparent;
+        }
         background-color: rgba(242, 242, 242, 1);
-    } 
+    }
+    &:hover + .employee_item_container .employee_item_content {
+        border-top: 1px solid transparent;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .employee_item_content {
-        //grid-template-columns: 45% 25% 20.3% 9.7%;
         grid-template-columns: 25% 25% 25% 25%;
     }
 }

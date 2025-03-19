@@ -25,55 +25,48 @@ export const PickedFilters = observer(() => {
     }, [])
     return (
         <>
-        {employeeStoreConfig.getFilters().find((el) => el.length > 0) && (
-        <div className='picked_filters__container'>
-            <div className='picked_filters__content'>
-                <div className='picked_filters'>
-                    <div className="picked_filters__label__container">
-                        <p className='picked_filters__label'>Выбранные фильтры:</p>
-                    </div>
-                    <div className='all_picked_filters'>
-                        {employeeStoreConfig.getFilters().map((arr: string[], index: number) => {
-                            const filterType = index === 0 ? 'Stack' : index === 1 ? 'Gender' : index === 2 ? 'Position' : 'Name';
-                            /* let text = ''
-                            switch(filterType) {
-                                case 'Stack':
-                                    text =
+            {employeeStoreConfig.getFilters().find((el) => el.length > 0) && (
+                <div className='picked_filters__container'>
+                    <div className='picked_filters__content'>
+                        <div className='picked_filters'>
+                            <div className="picked_filters__label__container">
+                                <p className='picked_filters__label'>Выбранные фильтры:</p>
+                            </div>
+                            <div className='all_picked_filters'>
+                                {employeeStoreConfig.getFilters().map((arr: string[], index: number) => {
+                                    const filterType = index === 0 ? 'Stack' : index === 1 ? 'Gender' : index === 2 ? 'Position' : 'Name'
+                                    return arr.map((el) => {
+                                        let text = ''
+                                        switch(filterType) {
+                                        case 'Stack':
+                                            text = el
+                                            break
+                                        case 'Gender':
+                                            text = Gender.data[0][Gender.data[1].findIndex((val) => val === el)]
+                                            break
+                                        case 'Position':
+                                            text = Position.data[0][Position.data[1].findIndex((val) => val === el)]
+                                            break
+                                        default:
+                                            text = ''
 
-                            } */
-                            return arr.map((el) => {
-                                let text = ''
-                                switch(filterType) {
-                                    case 'Stack':
-                                        text = el
-                                        break
-                                    case 'Gender':
-                                        text = Gender.data[0][Gender.data[1].findIndex((val) => val === el)]
-                                        break
-                                    case 'Position':
-                                        text = Position.data[0][Position.data[1].findIndex((val) => val === el)]
-                                        break
-                                    default:
-                                        text = ''
-
-                                }
-                                return <PickedFilterCard
-                                    key={`${filterType}-${el}`}
-                                    text={text}
-                                    //filterName={filterType}
-                                    onRemove={() => employeeStoreConfig.resetFilters(filterType, el)}
-                                />
-                            })
-                        })}
+                                        }
+                                        return <PickedFilterCard
+                                            key={`${filterType}-${el}`}
+                                            text={text}
+                                            onRemove={() => employeeStoreConfig.resetFilters(filterType, el)}
+                                        />
+                                    })
+                                })}
+                            </div>
+                        </div>
+                        <Button textData={'Найти'} onClick={() => {
+                            employeeStoreConfig.dropPage()
+                            employeeStoreConfig.loadEmployeesList()
+                        }}/>
                     </div>
                 </div>
-                <Button textData={'Найти'} onClick={() => {
-                    employeeStoreConfig.dropPage()
-                    employeeStoreConfig.loadEmployeesList()
-                    }}/>
-            </div>
-        </div>
-        )}
+            )}
         </>
     )
 })

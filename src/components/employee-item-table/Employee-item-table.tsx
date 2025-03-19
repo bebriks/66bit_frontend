@@ -2,14 +2,14 @@ import './employee-item-table.scss'
 import '../../App.scss'
 import { IEmployee } from '../../api/types/types'
 import { dateFormaterToDDMMYYYY, phoneFormater } from '../../utils/utils'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 interface EmployeeItemTableProps {
     data: IEmployee;
     onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const EmployeeItemTable = ({data, onClick}: EmployeeItemTableProps) => {
+const EmployeeItemTable = ({ data, onClick }: EmployeeItemTableProps) => {
     return (
         <div className='employee_item_container'>
             <NavLink to={`/employee/${data?.id}`}>

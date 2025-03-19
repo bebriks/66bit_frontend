@@ -6,20 +6,20 @@ import { IArticleProp } from '../../constants/articleProps'
 import { useEffect, useRef } from 'react'
 
 export const Accordion = (article: IArticleProp) => {
-    const detailsRef = useRef<HTMLDetailsElement>(null);
+    const detailsRef = useRef<HTMLDetailsElement>(null)
 
     useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (detailsRef.current && !detailsRef.current.contains(event.target as Node)) {
-          detailsRef.current.removeAttribute('open');
+        const handleClickOutside = (event: MouseEvent) => {
+            if (detailsRef.current && !detailsRef.current.contains(event.target as Node)) {
+                detailsRef.current.removeAttribute('open')
+            }
         }
-      };
   
-      document.addEventListener('click', handleClickOutside);
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      };
-    }, []);
+        document.addEventListener('click', handleClickOutside)
+        return () => {
+            document.removeEventListener('click', handleClickOutside)
+        }
+    }, [])
     return (
         <details ref={detailsRef} className='details' name='filter'>
             <summary className='summary text'>{article.summary[0]}</summary>
