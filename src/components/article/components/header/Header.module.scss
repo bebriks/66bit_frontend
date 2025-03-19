@@ -29,6 +29,9 @@
     font-size: $text_xl;
 }
 @media screen and (max-width: 320px) {
+    .header {
+        padding: 16px 24px;
+    }
     .logo {
         width: 52px;
         height: 22px;
