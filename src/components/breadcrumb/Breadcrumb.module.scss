@@ -21,6 +21,12 @@
     gap: 12px;
 }
 @media screen and (max-width: 320px) {
+    .breadcrumbs {
+        gap: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 24px;
+    }
     .breadcrumb_link {
         font-size: style.$text_s;
     }

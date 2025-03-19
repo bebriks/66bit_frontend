@@ -5,6 +5,5 @@ export const Main = ({ children }: {children: JSX.Element[] | JSX.Element}) => {
         <div className={styles.body}>
             {children}
         </div>
-
     )
 }

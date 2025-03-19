@@ -1,15 +1,15 @@
 import { Accordion } from '../accordion/Accordion'
 import { Technology, Gender, Position } from '../../constants/articleProps'
-import './Filters.scss'
+import styles from './Filters.module.scss'
 import '../../App.scss'
 import { Input } from '../input/Input'
 import { EmployeeStore } from '../../store/store_staff/store'
 
 export const Filters = (employeeConfig : EmployeeStore) => {
     return (
-        <div className='filters'>
-            <h1 className='label'>Список сотрудников</h1>
-            <div className='accordions'>
+        <div className={styles.filters}>
+            <h1 className={styles.label}>Список сотрудников</h1>
+            <div className={styles.accordions}>
                 {Accordion(Technology)}
                 {Accordion(Gender)}
                 {Accordion(Position)}

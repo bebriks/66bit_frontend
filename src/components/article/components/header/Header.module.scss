@@ -1,4 +1,4 @@
-@use '../../../../App.scss' as styles;
+@use '../../../../App.scss' as *;
 
 *{
     box-sizing: border-box;
@@ -6,7 +6,6 @@
 .header {
     width: 100%;
     align-items: center;
-    //box-shadow: 0px 4px 8px 0px rgba(57, 113, 164, 0.25);
     padding: 25px;
     .header__container{
         display: flex;
@@ -26,14 +25,18 @@
 .info{
     gap: 48px;
 }
-
-.dark {
-    .header {
-        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
-    }
+.contact { 
+    font-size: $text_xl;
 }
-.light {
-    .header {
-        box-shadow: 0px 4px 8px 0px rgba(57, 113, 164, 0.25);
+@media screen and (max-width: 320px) {
+    .logo {
+        width: 52px;
+        height: 22px;
+    }
+    
+    .contact {
+        visibility: hidden;
+        width: 0;
+        height: 0;
     }
 }

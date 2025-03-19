@@ -1,4 +1,4 @@
-import './Picked-filters.scss'
+import styles from './Picked-filters.module.scss'
 import '../../../App.scss'
 
 import { Position, Gender } from '../../../constants/articleProps'
@@ -23,16 +23,17 @@ export const PickedFilters = observer(() => {
             document.removeEventListener('keydown', handleKeyDown)
         }
     }, [])
+    
     return (
         <>
             {employeeStoreConfig.getFilters().find((el) => el.length > 0) && (
-                <div className='picked_filters__container'>
-                    <div className='picked_filters__content'>
-                        <div className='picked_filters'>
-                            <div className="picked_filters__label__container">
-                                <p className='picked_filters__label'>Выбранные фильтры:</p>
+                <div className={`${styles.picked_filters__container} picked_filters__container`}>
+                    <div className={styles.picked_filters__content}>
+                        <div className={styles.picked_filters}>
+                            <div className={styles.picked_filters__label__container}>
+                                <p className={styles.picked_filters__label}>Выбранные фильтры:</p>
                             </div>
-                            <div className='all_picked_filters'>
+                            <div className={styles.all_picked_filters}>
                                 {employeeStoreConfig.getFilters().map((arr: string[], index: number) => {
                                     const filterType = index === 0 ? 'Stack' : index === 1 ? 'Gender' : index === 2 ? 'Position' : 'Name'
                                     return arr.map((el) => {

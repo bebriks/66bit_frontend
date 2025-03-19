@@ -1,0 +1,50 @@
+@use '../../App.scss' as *;
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: center;
+    max-width: 1560px;
+    margin: auto;
+}
+.accordions {
+    display: flex;
+    align-self: center;
+    gap: 54px;
+}
+.label {
+    margin-bottom: 28px;
+}
+@media screen and (max-width: 320px) {
+    .label {
+        font-size: $text_xxl;
+        font-weight: 700;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    .filters {
+        padding-left: 24px;
+        padding-right: 24px;
+        :first-child {
+          order: 1;
+        }
+        :nth-child(2) {
+          order: 3;
+        }
+        :last-child {
+          order: 2;
+        }
+    }
+    
+    .accordions {
+        gap: 12px !important;
+        margin-top: 12px;
+        .summary.text::before {
+          width: 10px;
+          height: 5px;
+        }
+    
+    }
+    
+}

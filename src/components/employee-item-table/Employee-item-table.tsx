@@ -1,4 +1,4 @@
-import './employee-item-table.scss'
+import styles from './Employee-item-table.module.scss'
 import '../../App.scss'
 import { IEmployee } from '../../api/types/types'
 import { dateFormaterToDDMMYYYY, phoneFormater } from '../../utils/utils'
@@ -11,13 +11,13 @@ interface EmployeeItemTableProps {
 
 const EmployeeItemTable = ({ data, onClick }: EmployeeItemTableProps) => {
     return (
-        <div className='employee_item_container'>
+        <div className={`${styles.employee_item_container} employee_item_container`}>
             <NavLink to={`/employee/${data?.id}`}>
-                <div className='employee_item_content' onClick={onClick}>
-                    <p className='employee_item_container__name'>{data?.name}</p>
-                    <p className='employee_item_container__position'>{data?.position}</p>
-                    <p className='employee_item_container__phone'>{phoneFormater(data!.phone)}</p>
-                    <p className='employee_item_container__birthdate'>{dateFormaterToDDMMYYYY(data!.birthdate)}</p>
+                <div className={`${styles.employee_item_content} employee_item_content`} onClick={onClick}>
+                    <p className={styles.employee_item_container__name}>{data?.name}</p>
+                    <p className={styles.employee_item_container__position}>{data?.position}</p>
+                    <p className={styles.employee_item_container__phone}>{phoneFormater(data!.phone)}</p>
+                    <p className={styles.employee_item_container__birthdate}>{dateFormaterToDDMMYYYY(data!.birthdate)}</p>
                 </div>
             </NavLink>
         </div>

@@ -1,4 +1,4 @@
-import './Accordion.scss'
+import styles from './Accordion.module.scss'
 import '../../App.scss'
 
 import { Checkbox } from '../checkbox/Checkbox'
@@ -21,12 +21,12 @@ export const Accordion = (article: IArticleProp) => {
         }
     }, [])
     return (
-        <details ref={detailsRef} className='details' name='filter'>
-            <summary className='summary text'>{article.summary[0]}</summary>
-            <ul className='selectors'>
+        <details ref={detailsRef} className={`${styles.details} details`} name='filter'>
+            <summary className={styles.summary}>{article.summary[0]}</summary>
+            <ul className={`${styles.selectors} selectors`}>
                 {article.data[0].map((el, index) => 
-                    <li key={index} className='selector__container'>
-                        <p className='selector__item text text_400'>{el}</p>
+                    <li key={index} className={styles.selector__container}>
+                        <p className={styles.selector__item}>{el}</p>
                         <Checkbox key={index} filterName={article.summary[1]} value={article.data[1][index]} />
                     </li>
                 )}

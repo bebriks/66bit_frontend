@@ -1,13 +1,9 @@
 @use '/src/App.scss' as style;
-style.stack_card {
+
+.stack_card {
     padding: 10px 21.5px;
     border-radius: 5px;
 }
-/* .stack_card {
-    padding: 10px 21.5px;
-    //background-color: rgba(242, 242, 242, 1);
-    border-radius: 5px;
-} */
 
 @media screen and (max-width: 320px) {
     .stack_card {

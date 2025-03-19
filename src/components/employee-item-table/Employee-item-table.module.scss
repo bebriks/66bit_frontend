@@ -1,3 +1,5 @@
+@use '../../App.scss' as *;
+
 .employee_item_content {
     display: grid;
     grid-template-columns: 45% 25% 20.3% 9.7%;
@@ -27,7 +29,32 @@
 }
 
 @media screen and (max-width: 320px) {
+    .employee_item_container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .employee_item_content {
+        font-size: 12px;
+        padding-left: 24px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
     .employee_item_content {
         grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    .employee_item_container__name {
+        max-width: 86px;
+    }
+    .employee_item_container__position {
+        max-width: 75px;
+    }
+    .employee_item_container__phone{
+        max-width: fit-content;
+    }
+    .employee_item_container__birthdate{
+        max-width: 87px;
     }
 }

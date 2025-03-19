@@ -1,4 +1,4 @@
-import './Input.scss'
+import styles from './Input.module.scss'
 
 interface InputProps {
     onChange: (filterName: string, value: string) => void;
@@ -7,6 +7,6 @@ interface InputProps {
 
 export const Input = ({ onChange, value }: InputProps ) => {
     return (
-        <input type="text" className='input' placeholder='Поиск' defaultValue={value} onChange={(el) => onChange('name', el.target.value)}/>
+        <input type="text" className={styles.input} placeholder='Поиск' defaultValue={value} onChange={(el) => onChange('name', el.target.value)}/>
     )
 }

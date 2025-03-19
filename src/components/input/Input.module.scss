@@ -32,5 +32,10 @@
 @media screen and (max-width: 320px) {
     .input {
         font-size: $text_s;
+        max-height: 34px;
+        &::placeholder {
+            font-size: $text_s;
+            line-height: 100%;
+        }
     }
 }

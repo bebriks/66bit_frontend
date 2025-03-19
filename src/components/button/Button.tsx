@@ -1,5 +1,4 @@
 import styles from './Button.module.scss'
-//import '../../App.scss'
 
 export const Button = ({ textData, onClick }: {textData: string, onClick: () => void}) => {
     return (

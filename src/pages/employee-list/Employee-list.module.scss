@@ -1,8 +1,11 @@
+@use '../../App.scss' as *;
+
 .table {
     position: relative;
     max-width: 1584px;
     min-width: 450px;
     margin: auto;
+    color: $color__gray_light;
 }
 
 .grid__header {
@@ -21,6 +24,9 @@
 
 @media screen and (max-width: 320px) {
     .grid__header {
+        margin-top: 16px;
+        font-size: 10px;
+        padding-left: 24px;
         min-width: 450px;
         padding-right: 0;
         grid-template-columns: 25% 25% 25% 25%;

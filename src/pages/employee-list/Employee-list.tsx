@@ -1,5 +1,5 @@
 import '../../App.scss'
-import './Employee-list.scss'
+import styles from './Employee-list.module.scss'
 import { Filters } from '../../components/filters/Filters'
 import { Main } from '../../components/article/components/main/Main'
 import React, { Suspense, useContext, useEffect } from 'react'
@@ -34,9 +34,9 @@ export const EmployeeList = observer(() => {
         <Main>
             <Filters {...employeeConfig} />
             <PickedFilters />
-            <div className="custom_scroll" onScroll={() => handleVerticalScroll()}>
-                <div className='table'>
-                    <div className='grid__header'>
+            <div className={styles.custom_scroll} onScroll={() => handleVerticalScroll()}>
+                <div className={styles.table}>
+                    <div className={styles.grid__header}>
                         <p>ФИО</p>
                         <p>Должность</p>
                         <p>Телефон</p>

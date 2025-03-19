@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import './Checkbox.scss'
+import styles from './Checkbox.module.scss'
 import { employeeStore } from '../../store'
 import { observer } from 'mobx-react-lite'
 
@@ -27,14 +27,14 @@ export const Checkbox = observer(({ filterName, value }: {filterName: string, va
     }
 
     return (
-        <label className='checkbox__label' htmlFor="" onClick={handleCheckboxChange}>
+        <label className={styles.checkbox__label} htmlFor="" onClick={handleCheckboxChange}>
             <input
                 type="checkbox"
-                className='checkbox'
+                className={styles.checkbox}
                 checked={isChecked}
                 onChange={() => {}}
             />
-            <span className='checkmark'></span>
+            <span className={styles.checkmark}></span>
         </label>
     )
 })
