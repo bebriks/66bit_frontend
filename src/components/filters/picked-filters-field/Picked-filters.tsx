@@ -1,7 +1,7 @@
 import styles from './Picked-filters.module.scss'
 import '../../../App.scss'
 
-import { Position, Gender } from '../../../constants/articleProps'
+import { Technology, Position, Gender } from '../../../constants/articleProps'
 import { PickedFilterCard } from '../picked-filter-card/Picked-filter-card'
 import { useContext, useEffect } from 'react'
 import { employeeStore } from '../../../store'
@@ -40,7 +40,7 @@ export const PickedFilters = observer(() => {
                                         let text = ''
                                         switch(filterType) {
                                         case 'Stack':
-                                            text = el
+                                            text = Technology.data[0][Technology.data[1].findIndex((val) => val === el)]
                                             break
                                         case 'Gender':
                                             text = Gender.data[0][Gender.data[1].findIndex((val) => val === el)]
@@ -49,8 +49,8 @@ export const PickedFilters = observer(() => {
                                             text = Position.data[0][Position.data[1].findIndex((val) => val === el)]
                                             break
                                         default:
-                                            text = ''
-
+                                            console.log('dsadsads')
+                                            return
                                         }
                                         return <PickedFilterCard
                                             key={`${filterType}-${el}`}

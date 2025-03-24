@@ -32,7 +32,18 @@ export const GETEmployees = async (
         const response = await axios.get(`${import.meta.env.VITE_SERVER_API}?${queryString}`)
 
         if (response.status === 200) {
-            console.log(response.data)
+            return response.data
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const GETEmployeeById = async (id: number) => {
+    try {
+        const response = await axios.get(`${import.meta.env.VITE_SERVER_API}/${id}`)
+
+        if (response.status === 200) {
             return response.data
         }
     } catch (error) {

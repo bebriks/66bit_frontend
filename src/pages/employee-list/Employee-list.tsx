@@ -11,7 +11,7 @@ import { PickedFilters } from '../../components/filters/picked-filters-field/Pic
 
 const EmployeeItemTable = React.lazy(() => import('../../components/employee-item-table/Employee-item-table'))
 
-export const EmployeeList = observer(() => {
+export const EmployeeList = observer(({ onNavigate }: { onNavigate: (to: string) => void }) => {
     const employeeConfig = useContext(employeeStore)
 
     const handleVerticalScroll = debounce(() => {
@@ -22,13 +22,17 @@ export const EmployeeList = observer(() => {
     }, 100)
 
     useEffect(() => {
+        employeeConfig.setRouterContext(onNavigate)
+    },[onNavigate])
+
+    useEffect(() => {
         window.addEventListener('scroll', handleVerticalScroll)
         employeeConfig.loadEmployeesList()
         return () => {
             window.removeEventListener('scroll', handleVerticalScroll)
             handleVerticalScroll.cancel()
         }
-    }, [employeeConfig.employeesList, employeeConfig.genderFilters, employeeConfig.positionFilters, employeeConfig.stackFilters])
+    }, [window.location.search, employeeConfig.employeesList, employeeConfig.genderFilters, employeeConfig.positionFilters, employeeConfig.stackFilters])
 
     return (
         <Main>
